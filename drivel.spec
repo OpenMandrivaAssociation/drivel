@@ -1,12 +1,12 @@
 %define name drivel
-%define version 2.0.3
+%define version 2.1.0
 
 %define Summary A live journal for Gnome
 
 Summary: 	%Summary
 Name: 		%name
 Version: 	%version
-Release: 	%mkrel 3
+Release: 	%mkrel 1
 License: 	GPL
 Group: 		Networking/Other
 URL:		http://www.dropline.net/drivel/index.php
@@ -15,13 +15,14 @@ Source:		http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%name-16.png
 Source2:	%name-32.png
 Source3:	%name.png
+Source4:        gnome-%name.desktop
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtkspell-devel
 BuildRequires:  libgnomeui2-devel
 BuildRequires:  gtksourceview-devel
 BuildRequires:  libglade2.0-devel
-BuildRequires:	curl-devel 
+BuildRequires:	curl-devel
 BuildRequires:	scrollkeeper
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	rhythmbox
@@ -38,6 +39,8 @@ integration.
 %prep
 %setup -q
 
+./autogen.sh
+
 %build
 %configure2_5x --disable-mime-update --disable-desktop-update
 
@@ -45,9 +48,11 @@ integration.
 
 %install
 rm -rf %buildroot
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std UPDATE_MIME_DATABASE=true UPDATE_DESKTOP_DATABASE=true 
+GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std UPDATE_MIME_DATABASE=true UPDATE_DESKTOP_DATABASE=true
 
 rm -rf %{buildroot}/var/lib/scrollkeeper/
+
+cp -f %{SOURCE4} %buildroot/%{_datadir}/applications/
 
 %find_lang %name --with-gnome
 
