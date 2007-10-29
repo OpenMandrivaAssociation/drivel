@@ -20,13 +20,14 @@ BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtkspell-devel
 BuildRequires:  libgnomeui2-devel
-BuildRequires:  gtksourceview-devel
+BuildRequires:  gtksourceview1-devel
 BuildRequires:  libglade2.0-devel
 BuildRequires:	curl-devel
 BuildRequires:	scrollkeeper
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	rhythmbox
 BuildRequires:	desktop-file-utils
+BuildRequires:  libsoup-devel
 
 %description
 Drivel is a GNOME client for working with online journals, also known as
