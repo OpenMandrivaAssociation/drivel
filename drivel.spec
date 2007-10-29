@@ -39,7 +39,7 @@ integration.
 %prep
 %setup -q
 
-./autogen.sh
+%{__sh} autogen.sh
 
 %build
 %configure2_5x --disable-mime-update --disable-desktop-update
