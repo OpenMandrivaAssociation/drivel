@@ -16,6 +16,7 @@ Source1:	%name-16.png
 Source2:	%name-32.png
 Source3:	%name.png
 Source4:        gnome-%name.desktop
+BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtkspell-devel
 BuildRequires:  libgnomeui2-devel
