@@ -6,7 +6,7 @@
 Summary: 	%Summary
 Name: 		%name
 Version: 	%version
-Release: 	%mkrel 2
+Release: 	%mkrel 4
 License: 	GPLv2+
 Group: 		Networking/Other
 URL:		http://www.dropline.net/drivel/index.php
