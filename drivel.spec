@@ -1,12 +1,12 @@
 %define name drivel
-%define version 2.1.0
+%define version 3.0.0
 
 %define Summary A live journal for Gnome
 
 Summary: 	%Summary
 Name: 		%name
 Version: 	%version
-Release: 	%mkrel 4
+Release: 	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/Other
 URL:		http://www.dropline.net/drivel/index.php
@@ -16,6 +16,7 @@ Source1:	%name-16.png
 Source2:	%name-32.png
 Source3:	%name.png
 Source4:        gnome-%name.desktop
+Patch0:		drivel-3.0.0-mdv-fix-str-fmt.patch
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtkspell-devel
@@ -39,6 +40,7 @@ integration.
 
 %prep
 %setup -q
+%patch0 -p1 -b .strfmt
 
 %build
 %configure2_5x --disable-mime-update --disable-desktop-update
@@ -90,12 +92,12 @@ rm -rf %buildroot
 %{_bindir}/drivel
 %{_datadir}/drivel
 %{_datadir}/pixmaps/*
-%{_datadir}/icons/gnome/48x48/mimetypes/gnome-mime-application-x-drivel.png
+%{_datadir}/icons/gnome/*/mimetypes/gnome-mime-application-x-drivel.png
 %{_datadir}/applications/*.desktop
 %{_datadir}/mime/*
 %{_datadir}/mime-info/*
 %{_datadir}/application-registry/*
-%{_datadir}/omf/%{name}/%{name}-C.omf
+%{_datadir}/omf/%{name}/%{name}-*.omf
 %_liconsdir/%name.png
 %_miconsdir/%name.png
 %_iconsdir/%name.png
