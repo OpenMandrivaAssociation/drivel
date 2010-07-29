@@ -1,5 +1,5 @@
 %define name drivel
-%define version 3.0.0
+%define version 3.0.2
 
 %define Summary A live journal for Gnome
 
@@ -16,7 +16,6 @@ Source1:	%name-16.png
 Source2:	%name-32.png
 Source3:	%name.png
 Source4:        gnome-%name.desktop
-Patch0:		drivel-3.0.0-mdv-fix-str-fmt.patch
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	gtkspell-devel
@@ -42,7 +41,6 @@ integration.
 
 %prep
 %setup -q
-%patch0 -p1 -b .strfmt
 
 %build
 %configure2_5x --disable-mime-update --disable-desktop-update
