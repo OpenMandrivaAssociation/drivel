@@ -1,5 +1,5 @@
 %define name drivel
-%define version 3.0.2
+%define version 3.0.3
 
 %define Summary A live journal for Gnome
 
