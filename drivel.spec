@@ -9,7 +9,7 @@ Version: 	%version
 Release: 	%mkrel 1
 License: 	GPLv2+
 Group: 		Networking/Other
-URL:		http://www.dropline.net/drivel/index.php
+URL:		https://www.dropline.net/drivel/index.php
 
 Source:		http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Source1:	%name-16.png
