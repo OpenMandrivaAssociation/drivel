@@ -18,6 +18,11 @@ Source3:	%name.png
 Source4:        gnome-%name.desktop
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gtkspell-devel
 BuildRequires:  libgnomeui2-devel
 BuildRequires:	gnome-doc-utils
